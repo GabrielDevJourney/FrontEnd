@@ -1,0 +1,115 @@
+*{
+    font-family: JetBrains Mono Nl, sans-serif;
+    background-color: #0F172A;
+    color: white;
+    margin: 1rem;
+    scroll-behavior: smooth;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    font-size: 16px;
+}
+#main{
+    height: 100vh;
+    overflow-y: auto;
+    margin: 2rem;
+}
+#column{
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin: 0 25% 0 25%;
+}
+
+/* Header and nav bar*/
+#header{
+    position: sticky;
+    top: 0;
+    height: fit-content;
+
+}
+.nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+}
+.nav a{
+    text-decoration: none;
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.photoContainer{
+    display: flex;
+    justify-content: left;
+    padding: 0 2rem 0 0;
+    margin: 0 0 2rem 0;
+}
+#mePhoto{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+/* Description section */
+#myName{
+    align-self: center;
+    color: #3F255A;
+    background-color: #56D7C5;
+    font-size: 2rem;
+    width: 300px;
+    height: 2.7rem;
+    border-radius: 1rem;
+    margin-bottom: 0.5rem;
+}
+.description{
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #999999;
+    padding-left: 5px;
+}
+
+/* ALL HEADERS H2 SETTINGS */
+h2{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+p{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Skills seciton */
+#skills span{
+    padding-right: 1.5rem;
+}
+
+/* Hobbies section */
+#hobbies ul{
+    padding-left: 1rem;
+}
+#hobbies ul li{
+    padding-bottom:1rem ;
+}
+
+/* Footer */
+#footer{
+    margin-top: 1rem;
+    width: 100%;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#footer p{
+    padding-bottom: 1rem;
+}
+#footer span{
+    padding-right: 2rem;
+}
+.sectionsGaps{
+    margin-top: 3rem;
+}
