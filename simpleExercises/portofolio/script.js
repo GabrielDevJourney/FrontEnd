@@ -7,11 +7,8 @@ const fullNav = document.querySelector(".nav");
 
 //  Mouse Movement Handler
 function handleMouseMove(e) {
-	const rect = e.currentTarget.getBoundingClientRect();
-	const scrollTop = window.scrollY || document.documentElement.scrollTop;
-	const x = e.clientX - rect.left;
-	const y = e.clientY - rect.top - scrollTop;
-    console.log("ola")
+    const x = e.clientX;
+	const y = e.clientY;
 	updateGradientPosition(x, y);
 }
 
@@ -23,13 +20,14 @@ function handleNavClick(e) {
 	});
 	// Add active class to clicked link
 	e.target.classList.add("active");
-    fullNav.classList.remove("open");
-}
-function handleHambugerClick(e) {
-    fullNav.classList.toggle("open");
+	fullNav.classList.remove("open");
 }
 
-//  ui update
+function handleHambugerClick(e) {
+	fullNav.classList.toggle("open");
+}
+
+//  Ui update
 function updateGradientPosition(x, y) {
 	document.documentElement.style.setProperty("--mouse-x", `${x}px`);
 	document.documentElement.style.setProperty("--mouse-y", `${y}px`);
