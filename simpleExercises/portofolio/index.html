@@ -25,8 +25,6 @@
                     <nav class="nav">
                         <ul>
                             <li><a href="#about">About</a></li>
-                            <li><a href="#education">Education</a></li>
-                            <li><a href="#workExperience">Experience</a></li>
                             <li><a href="#skills">Skills</a></li>
                             <li><a href="#projects">Projects</a></li>
                             <li><a href="#hobbies">Hobbies</a></li>
@@ -62,55 +60,37 @@
                             </p>
                         </div>
                     </section>
-                    <section id="education" class="sectionsGaps">
-                        <h2>Education</h2>
-                        <article>
-                            <h3>Courses</h3>
-                            <p>2016-2019: GPSI at Jose Estevao</p>
-                            <p>2024-2025: Mindera School</p>
-                        </article>
-                    </section>
-                    <section id="workExperience" class="sectionsGaps">
-                        <h2>Work Experience</h2>
-                        <div>
-                            <p>
-                                Frontend Developer Interview ........
-                                loading
-                            </p>
-                            <img class="interviewImage" src="/skillsIcons/techmeme.webp" alt="tech meme interview" />
-                        </div>
-                    </section>
                     <section id="skills" class="sectionsGaps">
                         <h2>Skills</h2>
                         <div class="skills-grid">
                             <div class="skill-item">
                                 <a href="https://css-tricks.com/" target="_blank">
-                                    <img src="/skillsIcons/cssIcon.png" alt="css logo" />
+                                    <img src="/icons/cssIcon.png" alt="css logo" />
                                 </a>
                             </div>
                             <div class="skill-item">
                                 <a href="https://html.com/" target="_blank">
-                                    <img src="/skillsIcons/htmlIcon.png" alt="html logo" />
+                                    <img src="/icons/htmlIcon.png" alt="html logo" />
                                 </a>
                             </div>
                             <div class="skill-item">
                                 <a href="https://www.java.com/en/" target="_blank">
-                                    <img src="/skillsIcons/javaIcon.png" alt="java logo" />
+                                    <img src="/icons/javaIcon.png" alt="java logo" />
                                 </a>
                             </div>
                             <div class="skill-item">
                                 <a href="https://www.javascript.com/" target="_blank">
-                                    <img src="/skillsIcons/jsIcon.png" alt="javascript logo" />
+                                    <img src="/icons/jsIcon.png" alt="javascript logo" />
                                 </a>
                             </div>
                             <div class="skill-item">
                                 <a href="https://git-scm.com/" target="_blank">
-                                    <img src="/skillsIcons/git.png" alt="tool git logo" />
+                                    <img src="/icons/git.png" alt="tool git logo" />
                                 </a>
                             </div>
                             <div class="skill-item">
                                 <a href="https://github.com/" target="_blank">
-                                    <img src="/skillsIcons/Githubicon.png" alt="github logo" />
+                                    <img src="/icons/github.png" alt="github logo" />
                                 </a>
                             </div>
                         </div>
@@ -178,9 +158,8 @@
                                     </a>
                                 </div>
                                 <p class="project-description">
-                                    Interactive game supporting both
-                                    player-vs-player and AI modes with score
-                                    tracking and dynamic UI.
+                                    A modern, interactive Tic-Tac-Toe game built with HTML, CSS, and JavaScript. Play
+                                    against a friend or challenge the AI!
                                 </p>
                                 <div class="project-tags">
                                     <span class="tag">HTML</span>
@@ -188,19 +167,61 @@
                                     <span class="tag">JavaScript</span>
                                 </div>
                             </div>
+
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <div class="project-title">
+                                        <i class="fa-solid fa-terminal project-icon"></i>
+                                        Snake Game
+                                    </div>
+                                    <a href="https://github.com/GabrielDevJourney/JavaAdvance/tree/main/snakegame/snake-game-advance"
+                                        class="project-link" target="_blank">
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                    </a>
+                                </div>
+                                <p class="project-description">
+                                    A classic Snake game implemented in Java using the Lanterna library for a
+                                    terminal-based interface. Enjoy the retro gaming experience!
+                                </p>
+                                <div class="project-tags">
+                                    <span class="tag">Java</span>
+                                    <span class="tag">Lanterna</span>
+                                    <span class="tag">Terminal</span>
+                                </div>
+                            </div>
                         </div>
                     </section>
                     <section id="hobbies" class="sectionsGaps">
                         <h2>Hobbies</h2>
                         <article>
-                            <h3>When I'm not coding, you can find me:</h3>
-                            <ul>
-                                <li>Spending time with my girlfriend</li>
-                                <li>Gym</li>
-                                <li>Reading</li>
-                                <li>Running</li>
-                                <li>Watching some anime</li>
-                            </ul>
+                            <h3>When I'm not coding, you can find me</h3>
+                            <div class="hobbies-grid">
+                                <div class="hobby-item">
+                                    <img src="./icons/gym.png" alt="">
+                                    <p>
+                                        Gym
+                                    </p>
+                                </div>
+                                <div class="hobby-item">
+                                    <img src="./icons/run.png" alt="">
+                                    <p>
+                                        Running
+                                    </p>
+                                </div>
+                                <div class="hobby-item">
+                                    <img src="./icons/read.png" alt="">
+                                    <p>
+                                        Reading
+                                    </p>
+                                </div>
+                                <div class="hobby-item">
+                                    <img src="./icons/meBoo.png" alt="">
+                                    <p>
+                                        Time with Boo
+                                    </p>
+                                
+                                </div>
+                            </div>
                         </article>
                     </section>
                 </section>
@@ -208,16 +229,16 @@
             <footer id="footer">
                 <p>Created by Gabriel Pereira</p>
                 <div class="social-links">
-                    <span>
+                    <div>
                         <a href="https://github.com/GabrielDevJourney" target="_blank">
-                            <img src="/skillsIcons/githubFooter.png" alt="github logo" />
+                            <img src="/icons/github.png" alt="github logo" />
                         </a>
-                    </span>
-                    <span>
+                    </div>
+                    <div>
                         <a href="mailto:gabspereira178@gmail.com" target="_blank">
-                            <img src="/skillsIcons/mailFooter.png" alt="mail logo" />
+                            <img src="/icons/mailFooter.png" alt="mail logo" />
                         </a>
-                    </span>
+                    </div>
                 </div>
             </footer>
         </div>
