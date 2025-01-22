@@ -1,20 +1,21 @@
+/* todo implement hover effect in nav links to shift to right or even diagonal */
 /*                 Variables                  */
 :root {
 	/* Colors */
 	--color-primary: #56d7c5;
 	--color-bg: #0f172a;
-	--color-text: #e5e7eb;
-	--color-text-secondary: #9ca3af;
+	--color-text: #94a3b8;
 	--color-border: rgba(255, 255, 255, 0.1);
-	--color-card-bg: rgba(51, 65, 85, 0.5);
+	--color-card-tag-bg: rgba(51, 65, 85, 0.5);
+	--color-card-tag-border: rgba(86, 215, 197, 0.2);
 	--color-gradient: #12204844;
 
 	/* Typography */
-	--font-main: Montserrat, sans-serif;
+	--font-main: Inter, sans-serif;
 	--font-size-base: 16px;
 
 	/* Transitions */
-	--transition-default: all 0.3s ease;
+	--transition-default: all 0.5s ease;
 
 	/* Z-index layers */
 	--z-gradient: 1;
@@ -63,20 +64,25 @@ body {
 
 #column {
 	display: block;
-	margin-left: 400px;
+	margin-left: 30%;
 	max-width: 80%;
 	margin-right: 2rem;
 }
 
 #content {
 	position: relative;
+    margin-left: 2rem;
 	width: 80%;
+}
+
+#content section{
+    width: 70%;
 }
 
 /*              Typography                    */
 h2 {
 	font-size: 1.8rem;
-	font-weight: 500;
+	font-weight: 600;
 	color: white;
 	margin-bottom: 1.5rem;
 	letter-spacing: -0.3px;
@@ -125,7 +131,6 @@ h3 {
 	color: var(--color-text-secondary);
 	font-size: 1.4rem;
 	background: transparent;
-	font-weight: 400;
 	transition: var(--transition-default);
 	position: relative;
 	padding-left: 10px;
@@ -134,11 +139,15 @@ h3 {
 .nav ul li {
 	list-style: none;
 	margin-bottom: 1.5rem;
+	transition: all 0.5s ease-in-out;
 }
 
-.nav a:hover {
-	color: white;
+.nav ul li:hover {
 	transform: translateX(10px);
+	transition: all 0.5s;
+}
+.nav ul li a:hover {
+	color: white;
 }
 
 .nav a.active {
@@ -192,10 +201,12 @@ h3 {
 	justify-content: center;
 	align-items: center;
 	transition: var(--transition-default);
+
 }
 
 .skill-item:hover {
-	transform: translateY(-5px);
+	transform: translateY(-10px);
+    transition: var(--transition-default)
 }
 
 .skill-item img {
@@ -225,6 +236,7 @@ h3 {
 .project-card:hover {
 	transform: translateY(-10px);
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: var(--transition-default);
 }
 
 .project-header {
@@ -260,7 +272,6 @@ h3 {
 }
 
 .project-description {
-	color: #94a3b8;
 	font-size: 1rem;
 	margin: 1rem 0;
 	line-height: 1.6;
@@ -273,13 +284,13 @@ h3 {
 }
 
 .tag {
-	background-color: var(--color-card-bg);
-	border: 1px solid rgba(86, 215, 197, 0.2);
+	background-color: var(--color-card-tag-bg);
+	border: 1px solid var(--color-card-tag-border);
 	color: #e2e8f0;
 	padding: 0.25rem 0.75rem;
 	border-radius: 32px;
-	font-size: 0.75rem;
 	transition: var(--transition-default);
+	cursor: default;
 }
 
 .tag:hover {
@@ -290,6 +301,28 @@ h3 {
 /* Hobbies */
 #hobbies ul {
 	padding-left: 1rem;
+}
+.hobbies-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 2rem;
+    padding: 1rem 0;
+    max-width: 700px;
+}
+.hobby-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition-default);
+}
+.hobby-item img{
+    width: 64px;
+    height: 64px;
+}
+.hobby-item:hover{
+    transform: translateY(-10px);
+    transition: var(--transition-default);
 }
 
 /* Footer */
@@ -306,11 +339,25 @@ h3 {
 	padding-bottom: 1rem;
 	font-size: 1rem;
 	color: #6b7280;
-	font-weight: 400;
 }
 
 #footer span {
 	padding-right: 2rem;
+}
+.social-links {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+}
+.social-links img:hover {
+	transform: scale(1.1) rotate(45deg);
+	transition: all 0.5s ease-in-out;
+}
+.social-links a img {
+	width: 50px;
+	height: 50px;
+	transition: all 0.5s ease-in-out;
 }
 
 /*            Visual Effects                  */
@@ -355,7 +402,6 @@ h3 {
 	#content {
 		width: 100%;
 	}
-
 }
 
 /* Tablet and Mobile (950px and below) */
@@ -404,8 +450,6 @@ h3 {
 	#about {
 		scroll-margin-top: 270px;
 	}
-	#education,
-	#workExperience,
 	#skills,
 	#projects,
 	#hobbies {
@@ -465,7 +509,7 @@ h3 {
 		padding: 1rem;
 	}
 
-    /* Image adjustments */
+	/* Image adjustments */
 	.interviewImage {
 		width: 90%;
 		height: 90%;
@@ -493,7 +537,7 @@ h3 {
 @media screen and (max-width: 768px) {
 	/* Content adjustments */
 	#content {
-		margin-top: 160px;
+		margin-top: 180px;
 	}
 
 	/* Mobile navigation */
@@ -501,8 +545,6 @@ h3 {
 	#about {
 		scroll-margin-top: 270px;
 	}
-	#education,
-	#workExperience,
 	#skills,
 	#projects,
 	#hobbies {
@@ -548,8 +590,6 @@ h3 {
 	#about {
 		scroll-margin-top: 270px;
 	}
-	#education,
-	#workExperience,
 	#skills,
 	#projects,
 	#hobbies {
@@ -575,7 +615,7 @@ h3 {
 @media screen and (max-width: 480px) {
 	/* Content adjustments */
 	#content {
-		margin-top: 200px;
+		margin-top: 150px;
 		padding: 1rem;
 	}
 
@@ -584,8 +624,6 @@ h3 {
 	#about {
 		scroll-margin-top: 270px;
 	}
-	#education,
-	#workExperience,
 	#skills,
 	#projects,
 	#hobbies {
