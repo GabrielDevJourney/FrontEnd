@@ -409,7 +409,7 @@ h3 {
 	/* Layout adjustments */
 	#column {
 		margin: 0;
-		max-width: 100%;
+		max-width: 90%;
 	}
 
 	#main {
