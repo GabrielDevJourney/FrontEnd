@@ -1,0 +1,100 @@
+main {
+	display: flex;
+    flex-direction:column;
+    gap: 20px;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+}
+
+/** SQUARE ANIMATION*/
+.container {
+	background-color: rgba(153, 153, 153, 0.1);
+	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+	border-radius: 4px;
+	line-height: 24px;
+	padding: 30px;
+}
+#square {
+	position: relative;
+	animation: swing 3s linear alternate infinite;
+	width: 35px;
+	height: 35px;
+	margin: auto;
+	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+	line-height: 24px;
+	border-radius: 10%;
+	padding: 0px;
+	margin: 10px;
+}
+@keyframes swing {
+	0% {
+		left: -15px;
+		top: -15px;
+		background-color: rgba(67, 137, 219, 0.4);
+		border: 1px solid #4389db;
+	}
+
+	25% {
+		left: 15px;
+		top: -15px;
+		background-color: rgba(240, 141, 73, 0.4);
+		border: 1px solid #f08d49;
+	}
+	50% {
+		left: 15px;
+		top: 15px;
+		background-color: rgba(204, 153, 205, 0.4);
+		border: 1px solid #cc99cd;
+	}
+	75% {
+		left: -15px;
+		top: 15px;
+		background-color: rgba(126, 198, 85, 0.4);
+		border: 1px solid #7ec655;
+	}
+
+	100% {
+		left: -15px;
+		top: -15px;
+		background-color: rgba(255, 0, 0, 0.4);
+		border: 1px solid #ff0000;
+	}
+}
+
+/** BALL ANIMATION*/
+.ball {
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	animation: loading 3.5s infinite;
+	margin-right: 20px;
+}
+.ball.delay2 {
+    animation-delay: 0.5s;
+}
+.ball.delay3 {
+    animation-delay: 1s;
+}
+.ball.delay4 {
+    animation-delay: 1.5s;
+}
+.ball.delay5 {
+    animation-delay: 2s;
+}
+@keyframes loading {
+	0% {
+		transform: scale(0);
+		background-color: transparent;
+	}
+
+	20% {
+		transform: scale(1.8);
+		background-color: #49f09f;
+	}
+	40% {
+		transform: scale(0);
+		background-color: transparent;
+	}
+}
