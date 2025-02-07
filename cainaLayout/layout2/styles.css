@@ -1,0 +1,91 @@
+* {
+	box-sizing: border-box;
+}
+
+/* Common Styles */
+.aside-left,
+.main-content,
+.aside-right,
+header,
+footer {
+	text-align: center;
+	border-radius: 32px;
+}
+
+header {
+	margin: 16px;
+    background-color: lightblue;
+}
+
+/* Header */
+header {
+	position: sticky;
+	top: 0;
+	left: 0;
+	flex-basis: 100%;
+	height: 10vh;
+	display: flex;
+	justify-content: flex-end;
+	align-items: end;
+	border: 2px solid rosybrown;
+}
+
+.help-button {
+	flex-basis: 50px;
+	height: 50px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+/* Main */
+main {
+	display: flex;
+	flex-direction: row;
+}
+.left-container {
+	flex-basis: 20%;
+	height: 100vh;
+    padding: 16px;
+}
+.main-container {
+	flex-basis: 80%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 16px;
+}
+
+.triContainer {
+	flex-basis: 100%;
+	gap: 16px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.main-content {
+	border: 2px solid cyan;
+}
+
+.aside-right {
+	border: 2px solid peachpuff;
+}
+
+.main-content,
+.aside-right {
+	flex-basis: 50%;
+	height: 90vh;
+}
+
+.aside-left {
+	border: 2px solid teal;
+    height: 100%;
+}
+
+/* Footer */
+footer {
+	margin-top: 10px;
+	height: 10vh;
+	border: 2px solid olivedrab;
+}
