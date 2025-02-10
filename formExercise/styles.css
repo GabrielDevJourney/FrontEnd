@@ -1,0 +1,185 @@
+:root {
+    --primary: #6b3de3;
+    --error: #ff4757;
+    --success: #2ecc71;
+    --background: #0a0a2e;
+    --text: #fff;
+    --input-bg: rgba(255, 255, 255, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formContainer {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 20px;
+    width: 400px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.row {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.row input[type="text"],
+.row input[type="tel"],
+.row input[type="email"],
+.row input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    background: var(--input-bg);
+    border: none;
+    border-radius: 5px;
+    color: var(--text);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.row label {
+    display: block;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Phone input specific */
+.phoneContainer{
+    display: flex;
+    align-items: center;
+}
+.row span {
+    color: var(--text);
+    margin-right: 1rem;
+}
+
+/* Gender styles */
+.genresContainer {
+    display: flex;
+    gap: 2rem;
+    justify-content: flex-start;
+    margin-top: 0.5rem;
+}
+.genresContainer label{
+    margin-bottom: 0px;
+}
+
+.femaleContainer, .maleContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+#female, #male {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
+    transition: all 0.3s ease;
+    appearance: none;
+}
+
+#female {
+    border: 2px solid lightpink;
+}
+
+#male {
+    border: 2px solid lightblue;
+}
+
+#female:checked {
+    background: lightpink;
+    box-shadow: 0 0 15px lightpink;
+    transform: scale(0.8);
+}
+
+#male:checked {
+    background: lightblue;
+    box-shadow: 0 0 15px lightblue;
+    transform: scale(0.8);
+}
+
+/* Hobbies section */
+.hobbies {
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+.checkboxHobbies {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.checkboxHobbies > label{
+    margin-bottom: 0px;
+}
+
+/* Age slider */
+.age {
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#ageValue {
+    color: var(--primary);
+    font-weight: bold;
+    margin: 0 0.5rem;
+}
+
+input[type="range"] {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+/* Submit button */
+#btnSubmit {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(45deg, var(--primary), #9c88ff);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+#btnSubmit:hover {
+    transform: translateY(-2px);
+}
+
+/* Display data section */
+#data {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: var(--input-bg);
+    border-radius: 10px;
+    line-height: 1.6;
+    display: none;
+}
+
+/* Focus states */
+input:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.password-error{
+    border: 1px solid var(--error);
+}

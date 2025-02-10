@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Form Exercise</title>
+</head>
+<body>
+    <main>
+        <div class="formContainer">
+            <form id = "userForm" action="">
+                <div class="row">
+                    <label for="name">Name</label>
+                    <input name = "name" type ="text" required>
+                </div>
+                <div class="row">
+                    <label for="phone">Cell Phone</label>
+                    <div class="phoneContainer">
+                        <span>+351</span>
+                        <input name = "phone" type="tel" maxlength="9" pattern="9[261][0-9]{7}" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- todo add soe ligth coloring in checkbox instead of having default radio btns -->
+                    <label for="genre">Genre</label>
+                    <div class="genresContainer">
+                        <div class="femaleContainer">
+                            <label for="female">Female</label>
+                            <input id="female" name="genre" type="radio" required value="Feminino">
+                        </div>
+                        <div class="maleContainer">
+                            <label for="male">Male</label>
+                            <input id="male" name="genre" type="radio" value="Masculino">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <label for="email">Email</label>
+                    <input name = "email" type="email" required>
+                </div>
+                <div class="row">
+                    <!-- todo add * with hover to say what is required of password -->
+                    <label for="password">Password</label>
+                    <input id = "password" placeholder="Minimum eight characters, at least one letter uppercase and one lowercase,one number and one special character:" name="password" type="password" required>
+                </div>
+                <div class="row">
+                    <div class="hobbies">Hobbies</div>
+                    <section>
+                        <div class="checkboxHobbies">
+                            <input id = "reading" type="checkbox" name="hobbies" value="reading">
+                            <label for="reading">Reading</label>
+                        </div>
+                        <div class="checkboxHobbies">
+                            <input id = "traveling" type="checkbox" name="hobbies" value="traveling">
+                            <label for="traveling">Traveling</label>
+                        </div>
+                        <div class="checkboxHobbies">
+                            <input id = "cooking" type="checkbox" name="hobbies" value="cooking">
+                            <label for="cooking">Cooking</label>
+                        </div>
+                        <div class="checkboxHobbies">
+                            <input id="dancing" type="checkbox" name="hobbies" value="dancing">
+                            <label for="dancing">Dancing</label>
+                        </div>
+                    </section>
+                </div>
+                <div class="row">
+                    <div class="age">Age</div>
+                    <span id="ageValue">25</span>
+                    <input id = "userAge" name = "age" type="range" min="18" max="99" value="25">
+                </div>
+                <div class="row">
+                    <input id = "btnSubmit" type="submit" value="Submit">
+                </div>
+            </form>
+            <div id="data">
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

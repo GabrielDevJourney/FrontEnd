@@ -26,37 +26,33 @@ main {
 	border-radius: 10%;
 	padding: 0px;
 	margin: 10px;
+    will-change: transform;
 }
 @keyframes swing {
 	0% {
-		left: -15px;
-		top: -15px;
+        transform: translate(-15px, -15px);
 		background-color: rgba(67, 137, 219, 0.4);
 		border: 1px solid #4389db;
 	}
 
 	25% {
-		left: 15px;
-		top: -15px;
+        transform: translate(15px,-15px);
 		background-color: rgba(240, 141, 73, 0.4);
 		border: 1px solid #f08d49;
 	}
 	50% {
-		left: 15px;
-		top: 15px;
+        transform: translate(15px, 15px);
 		background-color: rgba(204, 153, 205, 0.4);
 		border: 1px solid #cc99cd;
 	}
 	75% {
-		left: -15px;
-		top: 15px;
+        transform: translate(-15px, 15px);
 		background-color: rgba(126, 198, 85, 0.4);
 		border: 1px solid #7ec655;
 	}
 
 	100% {
-		left: -15px;
-		top: -15px;
+        transform: translate(-15px, -15px);
 		background-color: rgba(255, 0, 0, 0.4);
 		border: 1px solid #ff0000;
 	}
