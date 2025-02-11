@@ -1,0 +1,268 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-size: 16px;
+	font-family: JetBrains Mono, monospace;
+}
+.deckContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+.card {
+	border: 1px solid black;
+	width: 200px;
+	height: 300px;
+	display: flex;
+	padding: 1rem;
+	margin: 1rem;
+	border-radius: 1rem;
+}
+.cardInfo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-right: 1rem;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.symbolsContainer {
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+.symbolsContainer:nth-of-type(2),
+.symbolsContainer:nth-of-type(4) {
+    justify-content: space-between;
+
+}
+.symbolsContainer:nth-of-type(3) {
+    justify-content: space-evenly;
+}
+.symbolsContainer:nth-of-type(3) > .finalSymbol:nth-child(1){
+    margin-top: 1rem;
+}
+.symbolsContainer:nth-of-type(3) > .finalSymbol:nth-child(3){
+    margin-bottom: 1rem;
+}
+.middle > img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: none;
+	object-fit: contain;
+}
+.finalSymbol {
+    visibility: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.flip {
+	transform: rotate(180deg);
+}
+.cardInfoFliped {
+	margin-left: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	align-items: center;
+}
+.cardInfoFliped .infoSymbol,
+.cardInfoFliped .infoNumber {
+    transform: rotate(180deg);
+}
+img {
+    width: 32px;
+    height: 32px;
+}
+.infoSymbol > img {
+	width: 20px;
+	height: 20px;
+}
+
+/* for J Q K image styling */
+.imageContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+.imageContainer img {
+    width: 100%;
+    height: auto;
+}
+/* flip bottom image */
+.imageContainer img:last-child {
+    transform: scaleY(-1) scaleX(-1);
+}
+/* VISIBILITY PATTERNS */
+
+/* Middle column only patterns (Cards 2 and 3) */
+[data-value="2"] .symbolsContainer:nth-of-type(3) .finalSymbol:nth-child(1),
+[data-value="2"] .symbolsContainer:nth-of-type(3) .finalSymbol:nth-child(3),
+[data-value="3"] .symbolsContainer:nth-of-type(3) .finalSymbol:nth-child(1),
+[data-value="3"] .symbolsContainer:nth-of-type(3) .finalSymbol:nth-child(2),
+[data-value="3"] .symbolsContainer:nth-of-type(3) .finalSymbol:nth-child(3) {
+    visibility: visible;
+}
+
+/* Corner positions pattern (Cards 4 and 5) */
+[data-value="4"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(1),
+[data-value="4"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(4),
+[data-value="4"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(1),
+[data-value="4"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(4),
+[data-value="5"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(1),
+[data-value="5"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(4),
+[data-value="5"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(1),
+[data-value="5"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(4) {
+    visibility: visible;
+}
+
+/* Center symbol visibility (Card 5) */
+[data-value="5"] .symbolsContainer:nth-of-type(3) .finalSymbol:nth-child(2) {
+    visibility: visible;
+}
+
+/* Three symbols in outer columns pattern (Cards 6 and 7) */
+[data-value="6"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(1),
+[data-value="6"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(2),
+[data-value="6"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(4),
+[data-value="6"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(1),
+[data-value="6"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(2),
+[data-value="6"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(4),
+[data-value="7"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(1),
+[data-value="7"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(2),
+[data-value="7"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(4),
+[data-value="7"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(1),
+[data-value="7"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(2),
+[data-value="7"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(4) {
+    visibility: visible;
+}
+
+/* Middle symbol visibility (Card 7) */
+[data-value="7"] .symbolsContainer:nth-of-type(3) .finalSymbol:nth-child(1) {
+    visibility: visible;
+}
+
+/* Full visibility patterns (Cards 8-10) */
+[data-value="8"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(1),
+[data-value="8"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(2),
+[data-value="8"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(4),
+[data-value="8"] .symbolsContainer:nth-of-type(3) .finalSymbol:nth-child(1),
+[data-value="8"] .symbolsContainer:nth-of-type(3) .finalSymbol:nth-child(3),
+[data-value="8"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(1),
+[data-value="8"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(2),
+[data-value="8"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(4),
+[data-value="9"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(1),
+[data-value="9"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(2),
+[data-value="9"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(3),
+[data-value="9"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(4),
+[data-value="9"] .symbolsContainer:nth-of-type(3) .finalSymbol:nth-child(2),
+[data-value="9"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(1),
+[data-value="9"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(2),
+[data-value="9"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(3),
+[data-value="9"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(4),
+[data-value="10"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(1),
+[data-value="10"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(2),
+[data-value="10"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(3),
+[data-value="10"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(4),
+[data-value="10"] .symbolsContainer:nth-of-type(3) .finalSymbol:nth-child(1),
+[data-value="10"] .symbolsContainer:nth-of-type(3) .finalSymbol:nth-child(3),
+[data-value="10"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(1),
+[data-value="10"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(2),
+[data-value="10"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(3),
+[data-value="10"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(4) {
+    visibility: visible;
+}
+
+/* Common absolute positioning */
+[data-value="6"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(3),
+[data-value="6"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(3),
+[data-value="7"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(3),
+[data-value="7"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(3),
+[data-value="8"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(3),
+[data-value="8"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(3) {
+    position: absolute;
+}
+
+/* ROTATION PATTERNS */
+
+/* Middle column bottom child rotation pattern */
+[data-value="2"] .symbolsContainer:nth-of-type(3) .finalSymbol:nth-child(3),
+[data-value="3"] .symbolsContainer:nth-of-type(3) .finalSymbol:nth-child(3),
+[data-value="8"] .symbolsContainer:nth-of-type(3) .finalSymbol:nth-child(3),
+[data-value="10"] .symbolsContainer:nth-of-type(3) .finalSymbol:nth-child(3) {
+    transform: rotate(180deg);
+}
+
+/* Outer columns bottom child rotation pattern */
+[data-value="4"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(4),
+[data-value="4"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(4),
+[data-value="5"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(4),
+[data-value="5"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(4),
+[data-value="8"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(4),
+[data-value="8"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(4) {
+    transform: rotate(180deg);
+}
+
+/* Outer columns multiple symbols rotation pattern */
+[data-value="6"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(2),
+[data-value="6"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(4),
+[data-value="6"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(2),
+[data-value="6"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(4),
+[data-value="7"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(2),
+[data-value="7"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(4),
+[data-value="7"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(2),
+[data-value="7"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(4) {
+    transform: rotate(180deg);
+}
+
+/* Complex rotation pattern for 9 and 10 */
+[data-value="9"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(3),
+[data-value="9"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(4),
+[data-value="9"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(3),
+[data-value="9"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(4),
+[data-value="10"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(3),
+[data-value="10"] .symbolsContainer:nth-of-type(2) .finalSymbol:nth-child(4),
+[data-value="10"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(3),
+[data-value="10"] .symbolsContainer:nth-of-type(4) .finalSymbol:nth-child(4) {
+    transform: rotate(180deg);
+}
+
+/* Complex Aces layout */
+[data-value="A"] .symbolsContainer:nth-of-type(3) .finalSymbol:nth-child(2) {
+    visibility: visible;
+}
+[data-value="A"] .symbolsContainer:nth-of-type(3){
+    width: 80%;
+}
+[data-value="A"] .symbolsContainer:nth-of-type(2),
+[data-value="A"] .symbolsContainer:nth-of-type(4) {
+    position: absolute;
+}
+[data-value="A"] .symbolsContainer:nth-of-type(3) .finalSymbol:nth-child(2) img {
+    width: 64px;
+    height: 64px;
+}
+
+/* Special case for card 9 middle rotation */
+[data-value="9"] .symbolsContainer:nth-of-type(3) .finalSymbol:nth-child(2) {
+    transform: rotate(180deg);
+}
+[data-value="10"] .symbolsContainer:nth-of-type(3) .finalSymbol:nth-child(1){
+    margin: 0;
+}
+[data-value="10"] .symbolsContainer:nth-of-type(3) .finalSymbol:nth-child(3){
+    margin: 0;
+}
