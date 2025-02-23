@@ -1,88 +1,141 @@
-const deck = document.querySelector(".deckContainer");
-const values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "A"];
-const faces = ["J", "Q", "K"];
-const suits = ["hearts", "diamonds", "clubs", "spades"];
+class Card {
+	constructor(value, suit) {
+		this.value = value;
+		this.suit = suit;
+	}
 
-//create cards of hight ranks
-function createFaceCard(face, suit) {
-	return `
-        <div class="card" data-value="${face}" data-suit="${suit}">
-            <div class="cardInfo">
-                <div class="info">
-                    <div class="infoNumber">${face}</div>
-                    <div class="infoSymbol"><img src="./assets/${suit}.png"></div>
+	createHTML() {
+		if (["J", "Q", "K"].includes(this.value)) {
+			return this.createFaceCard();
+		}
+		return this.createNumberCard();
+	}
+
+	createFaceCard() {
+		return `
+            <div class="card" data-value="${this.value}" data-suit="${this.suit}">
+                <div class="cardInfo">
+                    <div class="info">
+                        <div class="infoNumber">${this.value}</div>
+                        <div class="infoSymbol"><img src="./assets/${this.suit}.png"></div>
+                    </div>
+                </div>
+                <div class="imageContainer">
+                    <img src="./assets/${this.value}_${this.suit}.png">
+                    <img src="./assets/${this.value}_${this.suit}.png">
+                </div>
+                <div class="cardInfoFliped">
+                    <div class="info">
+                        <div class="infoNumber">${this.value}</div>
+                        <div class="infoSymbol"><img src="./assets/${this.suit}.png"></div>
+                    </div>
                 </div>
             </div>
-            <div class="imageContainer">
-                <img src="./assets/${face}_${suit}.png">
-                <img src="./assets/${face}_${suit}.png">
-            </div>
-            <div class="cardInfoFliped">
-                <div class="info">
-                    <div class="infoNumber">${face}</div>
-                    <div class="infoSymbol"><img src="./assets/${suit}.png"></div>
+        `;
+	}
+
+	createNumberCard() {
+		return `
+            <div class="card" data-value="${this.value}" data-suit="${this.suit}">
+                <div class="cardInfo">
+                    <div class="info">
+                        <div class="infoNumber">${this.value}</div>
+                        <div class="infoSymbol"><img src="./assets/${this.suit}.png"></div>
+                    </div>
+                </div>
+                <div class="symbolsContainer">
+                    <div class="finalSymbol"><img src="./assets/${this.suit}.png"></div>
+                    <div class="finalSymbol"><img src="./assets/${this.suit}.png"></div>
+                    <div class="finalSymbol"><img src="./assets/${this.suit}.png"></div>
+                    <div class="finalSymbol"><img src="./assets/${this.suit}.png"></div>
+                </div>
+                <div class="symbolsContainer">
+                    <div class="finalSymbol"><img src="./assets/${this.suit}.png"></div>
+                    <div class="finalSymbol"><img src="./assets/${this.suit}.png"></div>
+                    <div class="finalSymbol"><img src="./assets/${this.suit}.png"></div>
+                </div>
+                <div class="symbolsContainer">
+                    <div class="finalSymbol"><img src="./assets/${this.suit}.png"></div>
+                    <div class="finalSymbol"><img src="./assets/${this.suit}.png"></div>
+                    <div class="finalSymbol"><img src="./assets/${this.suit}.png"></div>
+                    <div class="finalSymbol"><img src="./assets/${this.suit}.png"></div>
+                </div>
+                <div class="cardInfoFliped">
+                    <div class="info">
+                        <div class="infoSymbol"><img src="./assets/${this.suit}.png"></div>
+                        <div class="infoNumber">${this.value}</div>
+                    </div>
                 </div>
             </div>
-        </div>
-    `;
+        `;
+	}
 }
 
-function createCard(value, suit) {
-	return `
-        <div class="card" data-value="${value}" data-suit="${suit}">
-            <div class="cardInfo">
-                <div class="info">
-                    <div class="infoNumber">${value}</div>
-                    <div class="infoSymbol"><img src="./assets/${suit}.png"></div>
-                </div>
-            </div>
-            <div class="symbolsContainer">
-                <div class="finalSymbol"><img src="./assets/${suit}.png"></div>
-                <div class="finalSymbol"><img src="./assets/${suit}.png"></div>
-                <div class="finalSymbol"><img src="./assets/${suit}.png"></div>
-                <div class="finalSymbol"><img src="./assets/${suit}.png"></div>
-            </div>
-            <div class="symbolsContainer">
-                <div class="finalSymbol"><img src="./assets/${suit}.png"></div>
-                <div class="finalSymbol"><img src="./assets/${suit}.png"></div>
-                <div class="finalSymbol"><img src="./assets/${suit}.png"></div>
-            </div>
-            <div class="symbolsContainer">
-                <div class="finalSymbol"><img src="./assets/${suit}.png"></div>
-                <div class="finalSymbol"><img src="./assets/${suit}.png"></div>
-                <div class="finalSymbol"><img src="./assets/${suit}.png"></div>
-                <div class="finalSymbol"><img src="./assets/${suit}.png"></div>
-            </div>
-            <div class="cardInfoFliped">
-                <div class="info">
-                <div class="infoSymbol"><img src="./assets/${suit}.png"></div>
-                <div class="infoNumber">${value}</div>
-                </div>
-            </div>
-        </div>
-    `;
-}
+class Deck {
+	constructor() {
+		this.deckElement = document.querySelector(".deckContainer");
+		this.backDeckElement = document.querySelector(".backCardDeck");
+		this.values = [
+			"A",
+			"2",
+			"3",
+			"4",
+			"5",
+			"6",
+			"7",
+			"8",
+			"9",
+			"10",
+			"J",
+			"Q",
+			"K",
+		];
+		this.suits = ["hearts", "diamonds", "clubs", "spades"];
+		this.cards = [];
+		this.initializeDeck();
+	}
 
-function generateNumberCards() {
-	values.forEach((value) => {
-		suits.forEach((suit) => {
-			deck.innerHTML += createCard(value, suit);
+	initializeDeck() {
+		this.cards = [];
+		this.values.forEach((value) => {
+			this.suits.forEach((suit) => {
+				this.cards.push(new Card(value, suit));
+			});
 		});
-	});
-}
+		//this.shuffle();
+		this.render();
+		this.createBackCardsDeck();
+	}
 
-function generateFaceCards() {
-	faces.forEach((face) => {
-		suits.forEach((suit) => {
-			deck.innerHTML += createFaceCard(face, suit);
+	shuffle() {
+		for (let i = this.cards.length - 1; i > 0; i--) {
+			const j = Math.floor(Math.random() * (i + 1));
+			[this.cards[i], this.cards[j]] = [this.cards[j], this.cards[i]];
+		}
+	}
+
+	render() {
+		this.deckElement.innerHTML = "";
+		this.cards.forEach((card) => {
+			this.deckElement.innerHTML += card.createHTML();
 		});
-	});
+	}
+
+	createBackCardsDeck() {
+		this.backDeckElement.innerHTML = "";
+		const cardCount = 26;
+		for (let i = 0; i < cardCount; i++) {
+			const backCard = document.createElement("div");
+			backCard.classList.add("backCard");
+			backCard.style.transform = `translate(${-i * 2}px, ${
+				-i * 1
+			}px) rotate(${-i * 1.5}deg)`;
+			backCard.style.zIndex = cardCount - i;
+			backCard.innerHTML = `<img src="./assets/cardBackImage.png" alt="Back of card">`;
+			this.backDeckElement.appendChild(backCard);
+		}
+	}
 }
 
-function createDeck() {
-	deck.innerHTML = "";
-	generateNumberCards();
-	generateFaceCards();
-}
-
-createDeck();
+// Initialize the game
+const deck = new Deck();
