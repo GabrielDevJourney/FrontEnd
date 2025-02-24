@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card War Game</title>
+    <link rel="stylesheet" href="../variables.css">
+    <link rel="stylesheet" href="wargame.css">
+    <link rel="stylesheet" href="../cards.css">
+</head>
+
+<body>
+    <div class="gameContainer">
+        <!-- Round -->
+        <nav class="roundContainer">
+            <div class="roundItem">
+                <div class="roundLabel">ROUND</div>
+                <output class="roundValue" id="roundCounter">0</output>
+            </div>
+        </nav>
+
+        <div class="playersContainer">
+            <!-- Player 1 Section -->
+            <section class="playerSection">
+                <div class="playerHeader">
+                    <h2>Player 1</h2>
+                    <div class="cardsCount">Cards: <output id="player1Cards">26</output></div>
+                </div>
+                <div class="playArea">
+                    <div class="backDeckContainer">
+                        <div class="backCardDeck" id="player1Deck"></div>
+                    </div>
+                    <div class="roundCards" id="player1RoundCards">
+                        <div class="emptyState">Cards will appear here</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Player 2 Section -->
+            <section class="playerSection">
+                <div class="playerHeader">
+                    <h2>Player 2</h2>
+                    <div class="cardsCount">Cards: <output id="player2Cards">26</output></div>
+                </div>
+                <div class="playArea">
+                    <div class="backDeckContainer">
+                        <div class="backCardDeck" id="player2Deck"></div>
+                    </div>
+                    <div class="roundCards" id="player2RoundCards">
+                        <div class="emptyState">Cards will appear here</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script type="module" src="warGame.js"></script>
+</body>
+
+</html>
