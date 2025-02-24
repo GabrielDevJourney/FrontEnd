@@ -1,0 +1,39 @@
+:root {
+	/* Spacing */
+	--spacing-sm: 0.5rem;
+	--spacing-md: 1rem;
+	--spacing-lg: 2rem;
+
+	/* Card dimensions */
+	--card-width: 200px;
+	--card-height: 300px;
+
+	/* Border styles */
+	--border-radius: 1rem;
+
+	/* Colors */
+	--color-border: #000;
+	--color-background: #fff;
+	--color-text-primary: #1e293b;
+	--color-text-secondary: #64748b;
+	--color-background-main: #f8fafc;
+
+	/* Shadows */
+	--shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Common reset styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+	:root {
+		--card-width: 150px;
+		--card-height: 225px;
+		--spacing-lg: 1rem;
+	}
+}

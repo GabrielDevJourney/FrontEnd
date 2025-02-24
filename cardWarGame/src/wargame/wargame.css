@@ -1,0 +1,127 @@
+@import url("./variables.css");
+
+body {
+	background-color: var(--color-background-main);
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--spacing-lg);
+}
+
+.gameContainer {
+	width: 100%;
+	max-width: 1400px;
+	padding: var(--spacing-lg);
+}
+
+/* round section */
+.roundContainer {
+	margin-bottom: var(--spacing-lg);
+	text-align: center;
+}
+
+.roundLabel {
+	color: var(--color-text-secondary);
+	font-size: 1rem;
+	margin-bottom: var(--spacing-sm);
+	letter-spacing: 2px;
+}
+
+.roundValue {
+	color: var(--color-text-primary);
+	font-size: 2.5rem;
+	font-weight: 500;
+}
+
+/* Players container */
+.playersContainer {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-lg);
+}
+
+/* Player sections */
+.playerSection {
+	background: var(--color-background);
+	border-radius: var(--border-radius);
+	padding: var(--spacing-lg);
+	box-shadow: var(--shadow-card);
+}
+
+.playerHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: var(--spacing-lg);
+}
+
+.playerHeader h2 {
+	color: var(--color-text-primary);
+	font-size: 1.5rem;
+	font-weight: 500;
+}
+
+.cardsCount {
+	color: var(--color-text-secondary);
+	font-size: 1rem;
+}
+
+/* Play area */
+.playArea {
+	display: flex;
+	gap: var(--spacing-lg);
+	align-items: center;
+}
+
+.backDeckContainer {
+	flex-shrink: 0;
+}
+
+.roundCards {
+	flex: 1;
+	height: var(--card-height);
+	border: 2px dashed var(--color-border);
+	border-radius: var(--border-radius);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.emptyState {
+	color: var(--color-text-secondary);
+	font-size: 0.875rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1400px) {
+	.playersContainer {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 768px) {
+	body {
+		padding: var(--spacing-sm);
+	}
+
+	.gameContainer {
+		padding: var(--spacing-sm);
+	}
+
+	.roundContainer {
+		flex-direction: column;
+		gap: var(--spacing-lg);
+		margin-bottom: var(--spacing-lg);
+	}
+
+	.playArea {
+		flex-direction: column;
+		gap: var(--spacing-sm);
+	}
+
+	.roundCards {
+		width: 100%;
+		min-height: var(--card-height);
+	}
+}

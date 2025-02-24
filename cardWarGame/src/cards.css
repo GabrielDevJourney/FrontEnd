@@ -1,22 +1,11 @@
+@import url(variables.css);
 :root {
-	/* Colors */
-	--color-border: #000;
-	--color-background: #fff;
-
 	/* Sizes */
 	--card-width: 200px;
 	--card-height: 300px;
 	--symbol-size: 32px;
 	--small-symbol-size: 20px;
 	--large-symbol-size: 64px;
-
-	/* Spacing */
-	--spacing-sm: 0.5rem;
-	--spacing-md: 1rem;
-	--spacing-lg: 2rem;
-
-	/* Border radius */
-	--border-radius: 1rem;
 }
 
 * {
