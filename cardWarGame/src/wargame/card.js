@@ -14,4 +14,12 @@ export default class Card {
 
         return symbolsNumericValues[this.value] || parseInt(this.value);
     }
+
+    getValue(){
+        return this.value;
+    }
+
+    getSuit(){
+        return this.suit;
+    }
 }
