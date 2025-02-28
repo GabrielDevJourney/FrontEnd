@@ -1,7 +1,6 @@
 const input = document.querySelector("#input");
 const button = document.querySelector("#btn");
 const list = document.querySelector("#list");
-let counterLimit = 0;
 let listArray = [];
 
 // Load tasks on page load
@@ -29,7 +28,6 @@ function addTask() {
 	addTaskToDOM(taskText);
 	listArray.push(taskText);
 	input.value = "";
-	counterLimit = listArray.length;
 	localStorage.setItem("listArray", JSON.stringify(listArray));
 }
 
@@ -42,7 +40,6 @@ function addTaskToDOM(taskText) {
 		event.target.parentElement.remove();
 		const index = listArray.indexOf(taskText);
 		listArray.splice(index, 1);
-		counterLimit = listArray.length;
 		localStorage.setItem("listArray", JSON.stringify(listArray));
 	});
 
@@ -53,7 +50,7 @@ function addTaskToDOM(taskText) {
 }
 
 function checkLimitCounter() {
-	if (counterLimit == 5) {
+	if (listArray.length == 5) {
 		alert("You have reached the limit of 5 items!");
 		return true;
 	}
