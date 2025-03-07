@@ -81,11 +81,11 @@ body {
 .roundCards {
 	flex: 1;
 	height: var(--card-height);
-	border: 2px dashed var(--color-border);
 	border-radius: var(--border-radius);
 	display: flex;
 	align-items: center;
-	justify-content: center;
+    justify-content: flex-start;
+    padding-left: 2rem;
 }
 
 .emptyState {

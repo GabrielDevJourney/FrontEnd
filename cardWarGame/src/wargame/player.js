@@ -13,9 +13,9 @@ export default class Player {
 		return this.cards.shift();
 	}
 
-    drawCards(num){
-        return this.cards.splice(0, num);
-    }
+	drawCards(num) {
+		return this.cards.splice(0, num);
+	}
 
 	getCards() {
 		return this.cards;
@@ -23,5 +23,9 @@ export default class Player {
 
 	getCardCount() {
 		return this.cards.length;
+	}
+
+	getBackDeck() {
+		return this.backDeck;
 	}
 }
