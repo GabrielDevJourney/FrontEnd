@@ -501,7 +501,28 @@ const WarGame = () => {
     };
 };
 
+const handleThemeController = () => {
+const themeToggle = document.querySelector(".switch input");
+    const body = document.body;
+
+    // Load the user's theme preference from localStorage
+    if (localStorage.getItem("darkMode") === "enabled") {
+        body.classList.add("dark-theme");
+        themeToggle.checked = true;
+    }
+
+    themeToggle.addEventListener("change", () => {
+        if (themeToggle.checked) {
+            body.classList.add("dark-theme");
+            localStorage.setItem("darkMode", "enabled");
+        } else {
+            body.classList.remove("dark-theme");
+            localStorage.setItem("darkMode", "disabled");
+        }
+    });
+}
 document.addEventListener("DOMContentLoaded", () => {
+    handleThemeController()
     const warGame = WarGame();
     warGame.handlePlayBtn();
     warGame.handleRestartBtn();
