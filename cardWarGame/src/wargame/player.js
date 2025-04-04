@@ -1,31 +1,39 @@
-export default class Player {
-	constructor(backDeck, id) {
-		this.cards = [];
-		this.backDeck = backDeck;
-		this.id = id;
-	}
+// player.js
+export const Player = (backDeck, id) => {
+    // Private properties
+    let _cards = [];
+    const _backDeck = backDeck;
+    const _id = id;
+    
+    const addCard = (card) => {
+        _cards.push(card);
+    }
+    
+    const drawCard = () => {
+        return _cards.shift();
+    }
+    
+    const drawCards = (num) => {
+        return _cards.splice(0, num);
+    }
+    
+    const getCards = () => _cards
+    const getCardCount = () => _cards.length
+    const getBackDeck = () => _backDeck
+    const getId = () => _id
+    
+    const setCards = (cards) => {
+        _cards = cards;
+    }
 
-	addCard(card) {
-		this.cards.push(card);
-	}
-
-	drawCard() {
-		return this.cards.shift();
-	}
-
-	drawCards(num) {
-		return this.cards.splice(0, num);
-	}
-
-	getCards() {
-		return this.cards;
-	}
-
-	getCardCount() {
-		return this.cards.length;
-	}
-
-	getBackDeck() {
-		return this.backDeck;
-	}
-}
+    return {
+        addCard,
+        drawCard,
+        drawCards,
+        getCards,
+        getCardCount,
+        getBackDeck,
+        getId,
+        setCards
+    };
+};

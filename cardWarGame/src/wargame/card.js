@@ -1,25 +1,18 @@
-export default class Card {
-	constructor(value, suit) {
-		this.value = value;
-		this.suit = suit;
-	}
-
-    get cardNumericValue(){
-        const symbolsNumericValues = {
-            'J': 11,
-            'Q': 12,
-            'K': 13,
-            'A' : 14
-        }
-
-        return symbolsNumericValues[this.value] || parseInt(this.value);
-    }
-
-    getValue(){
-        return this.value;
-    }
-
-    getSuit(){
-        return this.suit;
-    }
-}
+export const Card = (value, suit) => {
+    const _value = value;
+    const _suit = suit;
+    
+    const symbolsNumericValues = {
+        'J': 11,
+        'Q': 12,
+        'K': 13,
+        'A': 14
+    };
+    
+    return {
+        getValue: () => _value,
+        getSuit: () => _suit,
+        
+        cardNumericValue: symbolsNumericValues[_value] || parseInt(_value)
+    };
+};
